@@ -28,7 +28,7 @@
   with_items: homebrew_services
 
 - name: Create LaunchAgents folder
-  file: path=/etc/foo.conf state=directory
+  file: path=~/Library/LaunchAgents state=directory
   
 - name: Start services at login
   file: src=/usr/local/opt/{{ item }}/homebrew.mxcl.{{ item }}.plist path=~/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist state=link force=yes
