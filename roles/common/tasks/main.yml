@@ -1,0 +1,50 @@
+---
+
+- name: Tap homebrew 
+  homebrew_tap: tap={{ item }} state=present
+  with_items: homebrew_taps
+  
+- name: Install zsh
+  shell: wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+
+- name: Install cask
+  homebrew: name=cask state=latest update_homebrew=yes
+
+- name: Install xquartz
+  homebrew_cask: name=xquartz state=installed
+  
+- name: Install Java
+  homebrew_cask: name=java state=installed
+  
+- name: Install dependencies with homebrew
+  homebrew: name={{ item }} state=latest update_homebrew=yes
+  with_items: homebrew_dependencies
+
+- name: Install services with homebrew
+  homebrew: name={{ item }} state=latest update_homebrew=yes
+  with_items: homebrew_services
+
+- name: Create LaunchAgents folder
+  file: path=/etc/foo.conf state=directory
+  
+- name: Start services at login
+  file: src=/usr/local/opt/{{ item }}/homebrew.mxcl.{{ item }}.plist path=~/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist state=link force=yes
+  with_items: homebrew_services
+
+- name: Setup launch agents for services
+  command: launchctl load ~/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist
+  with_items: homebrew_services
+  
+- name: Install golang
+  homebrew: name=go state=latest update_homebrew=yes install_options=--cross-compile-all
+
+- name: Install PHP
+  homebrew: name=php56 update_homebrew=yes install_options=--without-apache,--with-fpm,--with-mysql
+  
+- name: Install applications with homebrew cask
+  homebrew_cask: name={{ item }} state=installed
+  with_items: cask_applications
+
+- name: Install ffmpeg
+  homebrew: name=ffmpeg update_homebrew=yes install_options=--with-fdk-aac,--with-ffplay,--with-freetype,--with-libass,--with-libquvi,--with-libvorbis,--with-libvpx,--with-opus,--with-x265
+

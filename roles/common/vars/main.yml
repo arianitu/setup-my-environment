@@ -1,0 +1,51 @@
+---
+
+homebrew_taps:
+  - phinze/homebrew-cask
+  - homebrew/dupes
+  - homebrew/php
+  - homebrew/science
+  
+homebrew_dependencies:
+  - z
+  - python
+  - node
+  - r
+  - wget
+  - ack
+  - git
+  - curl
+  - sqlite
+  - openssl
+  - maven
+  - nmap
+  - liquibase
+  
+homebrew_services:
+  - mariadb
+  - nginx
+  - redis
+  
+cask_applications:
+  - emacs
+  - spectacle
+  - intellij-idea-ce
+  - google-chrome
+  - firefox
+  - adobe-creative-cloud
+  - hipchat
+  - slack
+  - battle-net
+  - steam
+  - google-drive
+  - dropbox
+  - private-internet-access
+  - mumble
+  - vlc
+  - virtualbox
+  - wireshark
+  - skype
+  - torbrowser
+  - utorrent
+  - popcorn-time
+  - mysqlworkbench
