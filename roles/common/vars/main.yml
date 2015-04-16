@@ -1,6 +1,7 @@
 ---
 
 homebrew_taps:
+  - caskroom/cask
   - homebrew/dupes
   - homebrew/php
   - homebrew/science
@@ -10,7 +11,6 @@ homebrew_dependencies:
   - python
   - node
   - r
-  - wget
   - ack
   - git
   - curl

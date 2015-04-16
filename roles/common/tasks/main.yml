@@ -3,12 +3,15 @@
 - name: Tap homebrew 
   homebrew_tap: tap={{ item }} state=present
   with_items: homebrew_taps
+
+- name: Install wget
+  homebrew: name=wget state=latest update_homebrew=yes
   
 - name: Install zsh
   shell: wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
-
+  
 - name: Install cask
-  homebrew: name=caskroom/cask/brew-cask state=latest update_homebrew=yes
+  homebrew: name=brew-cask state=latest update_homebrew=yes
 
 - name: Install xquartz
   homebrew_cask: name=xquartz state=installed
@@ -19,7 +22,7 @@
 - name: Install dependencies with homebrew
   homebrew: name={{ item }} state=latest update_homebrew=yes
   with_items: homebrew_dependencies
-
+  
 - name: Install services with homebrew
   homebrew: name={{ item }} state=latest update_homebrew=yes
   with_items: homebrew_services
