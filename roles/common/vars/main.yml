@@ -1,7 +1,6 @@
 ---
 
 homebrew_taps:
-  - phinze/homebrew-cask
   - homebrew/dupes
   - homebrew/php
   - homebrew/science
