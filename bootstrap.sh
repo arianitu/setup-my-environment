@@ -9,4 +9,4 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install ansible
 
 # Run ansible script
-ansible-playbook setup-my-machine.yml
+ansible-playbook setup-my-machine.yml -i inventory
