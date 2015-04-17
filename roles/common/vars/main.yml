@@ -9,7 +9,6 @@ homebrew_taps:
 homebrew_dependencies:
   - z
   - python
-  - node
   - r
   - ack
   - git
@@ -19,7 +18,8 @@ homebrew_dependencies:
   - maven
   - nmap
   - liquibase
-  
+  - node
+
 homebrew_services:
   - mariadb
   - nginx
