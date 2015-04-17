@@ -43,6 +43,12 @@
 
 - name: Install PHP
   homebrew: name=php56 install_options=--without-apache,--with-fpm,--with-mysql
+
+- name: Start php-fpm at login
+  file: src=/usr/local/opt/php56/homebrew.mxcl.php56.plist path=~/Library/LaunchAgents/homebrew.mxcl.php56.plist state=link force=yes
+
+- name: Setup php-fpm agent
+  command: launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
   
 - name: Install applications with homebrew cask
   homebrew_cask: name={{ item }} state=installed
