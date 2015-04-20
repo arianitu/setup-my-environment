@@ -1,0 +1,10 @@
+---
+
+dev_directories:
+  - ~/Development
+  - ~/Development/personal
+  - ~/Development/www
+  - ~/Development/go
+  - ~/Development/go/bin
+  - ~/Development/go/pkg
+  - ~/Development/go/src

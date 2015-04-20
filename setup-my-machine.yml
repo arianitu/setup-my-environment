@@ -2,5 +2,5 @@
 - hosts: localhost
   connection: local
   roles:
-     - common
-     
+    - common
+    - config

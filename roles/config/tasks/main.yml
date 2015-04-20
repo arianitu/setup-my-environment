@@ -1,0 +1,21 @@
+---
+
+- name: Setup git email
+  command: git config --global user.email "arianitu@gmail.com"
+
+- name: Setup git name
+  command: git config --global user.name "Arianit Uka"
+
+- name: Create directories
+  file: path={{ item }} state=directory 
+  with_items: dev_directories
+
+- name: Install gocode
+  command: go get -u github.com/nsf/gocode
+
+- name: Clone dot files
+  git: repo=ssh://git@github.com/arianitu/dotfiles.git dest=~/Development/personal/dotfiles
+
+- name: Symlink emacs.d
+  file: src=~/Development/personal/dotfiles/.emacs.d dest=~/.emacs.d state=link
+
