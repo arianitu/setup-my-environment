@@ -10,6 +10,9 @@
   file: path={{ item }} state=directory 
   with_items: dev_directories
 
+- name: Symlink zshrc
+  file: src=~/Development/personal/dotfiles/.zshrc dest=~/.zshrc state=link
+  
 - name: Install gocode
   command: go get -u github.com/nsf/gocode
 
