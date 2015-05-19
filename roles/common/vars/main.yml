@@ -24,7 +24,8 @@ homebrew_services:
   - mariadb
   - nginx
   - redis
-  
+  - memcached
+
 cask_applications:
   - emacs
   - spectacle
