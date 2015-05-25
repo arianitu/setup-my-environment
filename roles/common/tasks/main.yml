@@ -39,10 +39,10 @@
   with_items: homebrew_services
   
 - name: Install golang
-  homebrew: name=go state=latest install_options=--cross-compile-all
+  homebrew: name=go state=latest install_options=with-cc-all
 
 - name: Install PHP
-  homebrew: name=php56 install_options=--without-apache,--with-fpm,--with-mysql
+  homebrew: name=php56 install_options=without-apache,with-fpm,with-mysql
 
 - name: Start php-fpm at login
   file: src=/usr/local/opt/php56/homebrew.mxcl.php56.plist path=~/Library/LaunchAgents/homebrew.mxcl.php56.plist state=link force=yes
@@ -55,5 +55,5 @@
   with_items: cask_applications
 
 - name: Install ffmpeg
-  homebrew: name=ffmpeg install_options=--with-fdk-aac,--with-ffplay,--with-freetype,--with-libass,--with-libquvi,--with-libvorbis,--with-libvpx,--with-opus,--with-x265
+  homebrew: name=ffmpeg install_options=with-fdk-aac,with-ffplay,with-freetype,with-libass,with-libquvi,with-libvorbis,with-libvpx,with-opus,with-x265
 
