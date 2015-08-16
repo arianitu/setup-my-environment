@@ -11,7 +11,7 @@
   with_items: dev_directories
 
 - name: Clone dot files
-  git: repo=https://github.com/arianitu/dotfiles.git dest=~/Development/personal/dotfiles
+  git: repo=ssh://git@github.com/arianitu/dotfiles.git dest=~/Development/personal/dotfiles
 
 - name: Symlink zshrc
   file: src=~/Development/personal/dotfiles/.zshrc dest=~/.zshrc state=link force=yes
