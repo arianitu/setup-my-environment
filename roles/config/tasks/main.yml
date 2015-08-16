@@ -10,14 +10,16 @@
   file: path={{ item }} state=directory 
   with_items: dev_directories
 
+- name: Clone dot files
+  git: repo=https://github.com/arianitu/dotfiles.git dest=~/Development/personal/dotfiles
+
 - name: Symlink zshrc
-  file: src=~/Development/personal/dotfiles/.zshrc dest=~/.zshrc state=link
-  
+  file: src=~/Development/personal/dotfiles/.zshrc dest=~/.zshrc state=link force=yes
+
 - name: Install gocode
   command: go get -u github.com/nsf/gocode
-
-- name: Clone dot files
-  git: repo=ssh://git@github.com/arianitu/dotfiles.git dest=~/Development/personal/dotfiles
+  environment:
+    GOPATH: /Users/auka/Development/go
 
 - name: Symlink emacs.d
   file: src=~/Development/personal/dotfiles/.emacs.d dest=~/.emacs.d state=link
