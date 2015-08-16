@@ -3,6 +3,7 @@ Sets up my dev environment in OSX using Ansible, Homebrew and Homebrew Cask. It 
 
 
 # Running
-- Install Xcode from the app store, or run xcode-select --install if you don't plan on using Xcode
+- Install Xcode from the app store, or 
+- run xcode-select --install on the command line and install developer tools
 - Click download as zip on the github sidebar (since you don't have git yet)
 - Then run ./bootstrap.sh and you're good to go!
