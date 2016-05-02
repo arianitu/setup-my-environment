@@ -42,7 +42,7 @@ cask_applications:
   - private-internet-access
   - mumble
   - vlc
-  - virtualbox
+  - dockertoolbox
   - wireshark
   - skype
   - torbrowser
