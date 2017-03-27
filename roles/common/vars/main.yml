@@ -33,18 +33,12 @@ cask_applications:
   - google-chrome
   - firefox
   - adobe-creative-cloud
-  - hipchat
   - slack
-  - battle-net
-  - steam
-  - google-drive
-  - dropbox
   - private-internet-access
   - mumble
   - vlc
-  - dockertoolbox
+  - docker-toolbox
   - wireshark
   - skype
   - torbrowser
-  - utorrent
   - mysqlworkbench
