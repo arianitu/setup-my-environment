@@ -2,7 +2,7 @@
 
 - name: Tap homebrew 
   homebrew_tap: tap={{ item }} state=present
-  with_items: homebrew_taps
+  with_items: "{{homebrew_taps}}"
 
 - name: Install wget
   homebrew: name=wget state=latest update_homebrew=yes
@@ -21,22 +21,22 @@
   
 - name: Install dependencies with homebrew
   homebrew: name={{ item }} state=latest 
-  with_items: homebrew_dependencies
+  with_items: "{{homebrew_dependencies}}"
   
 - name: Install services with homebrew
   homebrew: name={{ item }} state=latest 
-  with_items: homebrew_services
+  with_items: "{{homebrew_services}}"
 
 - name: Create LaunchAgents folder
   file: path=~/Library/LaunchAgents state=directory
   
 - name: Start services at login
   file: src=/usr/local/opt/{{ item }}/homebrew.mxcl.{{ item }}.plist path=~/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist state=link force=yes
-  with_items: homebrew_services
+  with_items: "{{homebrew_services}}"
 
 - name: Setup launch agents for services
   command: launchctl load ~/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist
-  with_items: homebrew_services
+  with_items: "{{homebrew_services}}"
   
 - name: Install golang
   homebrew: name=go state=latest install_options=with-cc-all
@@ -52,7 +52,7 @@
   
 - name: Install applications with homebrew cask
   homebrew_cask: name={{ item }} state=installed
-  with_items: cask_applications
+  with_items: "{{cask_applications}}"
 
 - name: Install ffmpeg
   homebrew: name=ffmpeg install_options=with-fdk-aac,with-ffplay,with-freetype,with-libass,with-libquvi,with-libvorbis,with-libvpx,with-opus,with-x265
