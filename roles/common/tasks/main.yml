@@ -9,9 +9,6 @@
   
 - name: Install zsh
   shell: wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
-  
-- name: Install cask
-  homebrew: name=brew-cask state=latest
 
 - name: Install xquartz
   homebrew_cask: name=xquartz state=installed
