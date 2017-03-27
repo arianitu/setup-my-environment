@@ -8,7 +8,7 @@
 
 - name: Create directories
   file: path={{ item }} state=directory 
-  with_items: dev_directories
+  with_items: "{{dev_directories}}"
 
 - name: Clone dot files
   git: repo=ssh://git@github.com/arianitu/dotfiles.git dest=~/Development/personal/dotfiles
