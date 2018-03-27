@@ -20,7 +20,7 @@ homebrew_dependencies:
   - liquibase
   - node
 
-homebrew_services:
+homebrew_services: []
 #  use docker instead now
 #  - mariadb
 #  - nginx
