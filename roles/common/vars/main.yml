@@ -21,23 +21,24 @@ homebrew_dependencies:
   - node
 
 homebrew_services:
-  - mariadb
-  - nginx
-  - redis
-  - memcached
+#  use docker instead now
+#  - mariadb
+#  - nginx
+#  - redis
+#  - memcached
 
 cask_applications:
   - emacs
   - spectacle
+  - docker
+  - transmission
   - intellij-idea-ce
   - google-chrome
   - firefox
   - adobe-creative-cloud
   - slack
-  - private-internet-access
   - mumble
   - vlc
-  - docker-toolbox
   - wireshark
   - skype
   - torbrowser
